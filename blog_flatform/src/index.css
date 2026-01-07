@@ -1,7 +1,18 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+@layer base {
+  .prose pre {
+    @apply bg-zinc-100 dark:bg-zinc-900 border border-border;
+  }
+
+  .prose code {
+    @apply text-primary font-mono bg-muted px-1 rounded;
+  }
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);

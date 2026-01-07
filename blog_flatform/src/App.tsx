@@ -1,11 +1,11 @@
-import { Button } from "./components/ui/button"
+import { RouterProvider } from "react-router-dom";
+import { ThemeProvider } from "@/context/ThemeContext";
+import { router } from "./routes";
 
-function App() {
+export default function App() {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <Button variant="outline">Welcome to Blog Platform</Button>
-    </div>
-  )
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
-
-export default App
